@@ -1,8 +1,8 @@
 from mensagem_do_dia import request_mensagem_do_dia, escolhe_bicho
 from flask import Flask, jsonify, request
+from pyngrok import ngrok
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello():
@@ -31,5 +31,5 @@ def bicho_da_sorte():
         return "Por favor, forneça a data de nascimento como parâmetro na URL."
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+	app.run(host='0.0.0.0')
